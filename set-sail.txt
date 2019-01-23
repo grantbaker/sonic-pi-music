@@ -1,0 +1,80 @@
+define :v1_m1 do
+  _release = 0.5
+  play :C4, release: _release
+  sleep 0.25
+  play :G4, release: _release
+  sleep 0.375
+  play :C4, release: _release
+  sleep 0.125
+  play :F4, release: _release
+  sleep 0.25
+  play :E4, release: _release
+  sleep 0.25
+  play :D4, release: _release
+  sleep 0.75
+end
+define :v1_m2 do
+  _release = 0.5
+  play :C4, release: _release
+  sleep 0.25
+  play :D4, release: _release
+  sleep 0.375
+  play :D4, release: _release
+  sleep 0.125
+  play :F4, release: _release
+  sleep 0.25
+  play :C4, release: _release
+  sleep 0.25
+  play :D4, release: _release
+  sleep 0.75
+end
+define :v1_m3 do
+  _release = 0.5
+  play :C4, release: _release
+  sleep 0.25
+  play :G4, release: _release
+  sleep 0.125
+  play :E4, release: _release
+  sleep 0.125
+  play :D4, release: _release
+  sleep 0.25
+  play :C4, release: _release
+  sleep 0.375
+  play :C4, release: _release
+  sleep 0.125
+  play :D4, release: _release
+  sleep 0.75
+end
+define :v1_m4 do
+  _release = 0.5
+  play :D4, release: _release
+  sleep 0.25
+  play :C4, release: _release
+  sleep 0.25
+  play :G4, release: _release
+  sleep 0.125
+  play :F4, release: _release
+  sleep 0.125
+  play :C4, release: _release
+  sleep 0.125
+  play :E4, release: _release
+  sleep 0.25
+  play :C4, release: _release
+  sleep 0.125
+  play :D4, release: _release
+  sleep 0.25
+  play :C4, release: _release
+  sleep 0.5
+end
+
+use_synth :pretty_bell
+2.times do
+  2.times do
+    v1_m1
+    v1_m2
+  end
+  2.times do
+    v1_m3
+    v1_m4
+  end
+end
