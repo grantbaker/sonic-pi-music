@@ -69,6 +69,16 @@ end
 
 use_synth :pretty_bell
 2.times do
+  v1_m1
+  v1_m2
+end
+2.times do
+  v1_m3
+  v1_m4
+end
+
+in_thread do
+  use_synth :pretty_bell
   2.times do
     v1_m1
     v1_m2
@@ -78,3 +88,14 @@ use_synth :pretty_bell
     v1_m4
   end
 end
+
+use_synth :tb303
+2.times do
+  v1_m1
+  v1_m2
+end
+2.times do
+  v1_m3
+  v1_m4
+end
+
