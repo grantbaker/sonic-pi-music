@@ -1,0 +1,150 @@
+define :play_seqs_r_oa do |notes, rhythm, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_r do |notes, rhythm, releases|
+  play_seqs_r_oa notes, rhythm, releases, 0, 1
+end
+
+define :play_seqs_ar_oa do |notes, rhythm, attacks, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_ar do |notes, rhythm, attacks, releases|
+  play_seqs_ar_oa notes, rhythm, attacks, releases, 0, 1
+end
+
+define :play_seqs_asr_oa do |notes, rhythm, attacks, sustains, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      sustain: sustains.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_asr do |notes, rhythm, attacks, sustains, releases|
+  play_seqs_ar_oa notes, rhythm, attacks, sustains, releases, 0, 1
+end
+
+define :play_seqs_adsr_oa do |notes, rhythm, attacks, decays, sustains, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      decay: decays.ring[i],
+      sustain: sustains.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_adsr do |notes, rhythm, attacks, decays, sustains, releases|
+  play_seqs_adsr_oa notes, rhythm, attacks, decays, sustains, releases, 0, 1
+end
+
+define :play_seqs_assr_oa do |notes, rhythm, attacks, sustains, sustain_levels, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      sustain: sustains.ring[i],
+      sustain_level: sustain_levels.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_assr do |notes, rhythm, attacks, sustains, sustain_levels, releases|
+  play_seqs_ar_oa notes, rhythm, attacks, sustains, sustain_levels, releases, 0, 1
+end
+
+define :play_seqs_aadssr_oa do |notes, rhythm, attacks, attack_levels,
+    decays, sustains, sustain_levels, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      attack_level: attack_levels.ring[i],
+      decay: decays.ring[i],
+      sustain: sustains.ring[i],
+      sustain_level: sustain_levels.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_aadssr do |notes, rhythm, attacks, attack_levels,
+    decays, sustains, sustain_levels, releases|
+  play_seqs_ar_oa notes, rhythm, attacks, attack_levels,
+    decays, sustains, sustain_levels, releases, 0, 1
+end
+
+define :play_seqs_adssr_oa do |notes, rhythm, attacks, decays,
+    sustains, sustain_levels, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      decay: decays.ring[i],
+      sustain: sustains.ring[i],
+      sustain_level: sustain_levels.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_adssr do |notes, rhythm, attacks, decays, sustains, sustain_levels, releases|
+  play_seqs_ar_oa notes, rhythm, attacks, decays, sustains, sustain_levels, releases, 0, 1
+end
+
+define :play_seqs_aaddssr_oa do |notes, rhythm, attacks, attack_levels,
+    decays, decay_levels, sustains, sustain_levels, releases, offset, amp|
+  i = 0
+  notes.each do |note|
+    play note+offset,
+      amp: amp,
+      attack: attacks.ring[i],
+      attack_level: attack_levels.ring[i],
+      decay: decays.ring[i],
+      decay_level: decay_levels.ring[i],
+      sustain: sustains.ring[i],
+      sustain_level: sustain_levels.ring[i],
+      release: releases.ring[i]
+    sleep rhythm.ring[i]
+    i += 1
+  end
+end
+
+define :play_seqs_aaddssr do |notes, rhythm, attacks, attack_levels,
+    decays, decay_levels, sustains, sustain_levels, releases|
+  play_seqs_ar_oa notes, rhythm, attacks, attack_levels,
+    decays, decay_levels, sustains, sustain_levels, releases, 0, 1
+end

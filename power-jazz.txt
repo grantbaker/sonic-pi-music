@@ -7,10 +7,11 @@ sleep 1
 end
 sleep 1
 
+notesb = (scale :e3, :major_pentatonic)
 sn = synth :prophet, note: :e1, release: 8, cutoff: 100
 sleep 1
 32.times do
-  control sn, note: notes.tick(:b)
+  control sn, note: notesb.tick(:b)
   sleep 0.125
 end
 sleep 1
